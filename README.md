@@ -1,4 +1,4 @@
-# Images
+# Docker Images
 - images contain the code, setup and meet
 - containers are the running instances of those images
 
