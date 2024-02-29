@@ -40,4 +40,19 @@
 - any docker comand with --help to view all the arguments of command
 
 # Stopping & Restarting containers
--  
+-  docker ps show running containers
+-  docker ps -a show all containers you had in the past incl stopped containers
+-  docker run (you create new container) sometimes we want to run stopped so u just  need to restart docker start name_of_container.
+
+# Understanding Detached & Attached Containers
+- when we enter docker run command we stuck in the process unable to enter anything (The containers is running in foreground) but with docker start run in the background.
+- Attached mode while run command and start having detached mode.
+- In application, console.log() is written to terminal we are unable to see this in detached mode (docker start).
+- Attached means we are listening to the output of that container.
+- we can also run docker run with flag -d for detached mode run container in background.
+- if you want to work on same terminal use detached mode easily.
+- we can attach running container as well with docker attach <container_name>
+- docker logs command to fetch logs that printed by container 
+ docker logs <container_name>
+- docker logs -f <container_name> future logs
+- docker start -a <container_name> start container in attached mode
