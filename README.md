@@ -56,3 +56,30 @@
  docker logs <container_name>
 - docker logs -f <container_name> future logs
 - docker start -a <container_name> start container in attached mode
+
+# Interactive mode
+- console application like in Python project we need to run container in interactive mode so we can enter our input so use docker run -i or if want terminal as well use -it
+- docker start -a -i <container>
+
+# Remove containers & images
+- docker rm <container names sperated by space> container1 container2
+- docker images (list images)
+- docker rmi ImageId
+- get rid of all unused images -> use docker image prune
+- docker run -p 3000:80 -d --rm CONTAINER_NAME (Automatically removes the container when its stopped)
+# Docker image inspect
+- docker containers are thin layer on top of images. multipel runing on the same image which means applciation code and enironment ahs been shared with others containers not copied that why the code inside of the image is also locked but you can create files on containers.
+- docker image inspect (all info about image)
+- docker naming with --name flag
+
+# Copying files from & to the container
+- docker cp dummy/. cotnainername:/test
+- above command copy all files in dummy folder to test folder in container
+# Image Tagging
+- tag consists of name:tag (tag is for version or specialized image within group of images). combined a unique identifier.
+- when building image use -t for tag
+- docker build -t lamp:1.0 .
+-  now you can use image tags in running cotainer docker run lamp:1.0
+
+# Sharing Image
+- Share built image: download an image and run container based on it. no build step required.
