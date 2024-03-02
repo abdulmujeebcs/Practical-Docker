@@ -1,0 +1,3 @@
+- docker build --t feedback-node .
+- docker run -p 3000:80 --name feedback-app -d --rm feedback-node
+- here feedback-node is the tag of image
