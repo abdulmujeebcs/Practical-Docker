@@ -1,0 +1,1 @@
+- docker run -it --name goals-frontend-app --network goals-nt -p 3000:3000 goals-frontend
